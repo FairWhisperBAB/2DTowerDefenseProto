@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8148ce32f5a57498487e94ffa42f9f39, type: 3}
-  m_Name: MageTowerInfo
+  m_Name: MageTower
   m_EditorClassIdentifier: 
   _name: Mage
   _cost: 200
