@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text _towerCost;
     [SerializeField] private TMP_Text _towerDescription;
 
-    [SerializeField] private TextMeshProUGUI _startBtn;
+/*    [SerializeField] private GameObject _startBtn;*/
 
     // Start is called before the first frame update
     void Start()

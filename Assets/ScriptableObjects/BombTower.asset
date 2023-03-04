@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8148ce32f5a57498487e94ffa42f9f39, type: 3}
   m_Name: BombTower
   m_EditorClassIdentifier: 
+  turretPrefab: {fileID: 519328523976122685, guid: 73dfbf838075a264eb527c578c786e1c, type: 3}
   _name: Bomber
   _cost: 300
   _description: Slow firing cannon that does AOE damage to units.
+  _damage: 0
