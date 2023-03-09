@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8148ce32f5a57498487e94ffa42f9f39, type: 3}
   m_Name: MageTower
   m_EditorClassIdentifier: 
+  turretPrefab: {fileID: 4254023747412522265, guid: ea245999562e94915aa38f3b1e2e3b43, type: 3}
   _name: Mage
   _cost: 200
   _description: Slow firing wizard that does high damage to all unity.
+  _damage: 0
+  _range: 15
+  _fireRate: 0.5

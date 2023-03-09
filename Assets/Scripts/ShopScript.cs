@@ -11,16 +11,23 @@ public class ShopScript : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
-    public void PurchaseTurret()
+    public void PurchaseArcherTurret()
     {
-        Debug.Log("purchased turret");
+        Debug.Log("purchased Archer turret");
         buildManager.SetTurretToBuild(buildManager.ArrowTower);
 
     }
-    public void PurchaseOttaTurret()
+    public void PurchaseBombTurret()
     {
-        Debug.Log("purchased otta turret");
+        Debug.Log("purchased Bomb turret");
         buildManager.SetTurretToBuild(buildManager.BombTower);
+
+    }
+
+    public void PurchaseMageTurret()
+    {
+        Debug.Log("purchased Mage turret");
+        buildManager.SetTurretToBuild(buildManager.MageTower);
 
     }
 

@@ -19,6 +19,7 @@ public class BuildManager : MonoBehaviour
     [Header("TOWER TYPES")]
     public Towers ArrowTower;
     public Towers BombTower;
+    public Towers MageTower;
 
     [Header("other")]
     private GameObject turretToBuild;
