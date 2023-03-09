@@ -5,11 +5,12 @@ using UnityEngine;
 public class TowerScript : MonoBehaviour
 {
     private Transform target;
+    public Towers towerStats;
 
     [Header ("Stats")]
-    public float fireRate = 1f;
-    public float fireCountDown = 0f;
-    public float range = 15f;
+    //public float fireRate = 1f;
+    private float fireCountDown = 0f;
+    //public float range = 15f;
 
     [Header("Unity SetUp")]
     public string enemyTag = "Enemy";
@@ -46,7 +47,7 @@ public class TowerScript : MonoBehaviour
             }
         }
 
-        if (nearestEnemy != null && shortestDistance <= range)
+        if (nearestEnemy != null && shortestDistance <= towerStats.Range)
         {
             target = nearestEnemy.transform;
         }
@@ -71,7 +72,7 @@ public class TowerScript : MonoBehaviour
         if (fireCountDown <= 0)
         {
             Shoot();
-            fireCountDown = 1f / fireRate;
+            fireCountDown = 1f / towerStats.FireRate;
         }
 
         fireCountDown -= Time.deltaTime;
@@ -92,6 +93,6 @@ public class TowerScript : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);        
+        Gizmos.DrawWireSphere(transform.position, towerStats.Range);        
     }
 }

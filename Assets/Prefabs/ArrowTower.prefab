@@ -46,9 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed6c286b60a1430dab410931120d02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
-  fireCountDown: 0
-  range: 15
+  towerStats: {fileID: 11400000, guid: 46749f4a17c2d486ea13e58d184026e9, type: 2}
   enemyTag: Enemy
   partToRotate: {fileID: 813380899130468080}
   TurnSpeed: 10
