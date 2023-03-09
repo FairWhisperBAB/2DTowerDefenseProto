@@ -32,7 +32,4 @@ public class BuildManager : MonoBehaviour
     {
         turretToBuild = towerType.turretPrefab;
     }
-
-    /*turretToBuild = ArrowTower.turretPrefab;*/
-
 }
