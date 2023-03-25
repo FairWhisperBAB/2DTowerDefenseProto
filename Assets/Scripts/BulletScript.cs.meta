@@ -3,7 +3,10 @@ guid: 164e91e7802af40dd81ec550bb6af668
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ArcherTower: {fileID: 11400000, guid: 46749f4a17c2d486ea13e58d184026e9, type: 2}
+  - BombTower: {fileID: 11400000, guid: c620d0b9cf25b48c882a88204555f413, type: 2}
+  - MageTower: {fileID: 11400000, guid: a30bb2ec1d055496a92d88f084ebe8d8, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

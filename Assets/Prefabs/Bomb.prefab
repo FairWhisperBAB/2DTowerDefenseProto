@@ -129,3 +129,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+  explosionRadius: 3
+  TowerType: {fileID: 11400000, guid: c620d0b9cf25b48c882a88204555f413, type: 2}

@@ -1574,6 +1574,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291dab7432a45794786f60cec524af33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ArrowTower: {fileID: 11400000, guid: 46749f4a17c2d486ea13e58d184026e9, type: 2}
+  BombTower: {fileID: 11400000, guid: c620d0b9cf25b48c882a88204555f413, type: 2}
+  MageTower: {fileID: 11400000, guid: a30bb2ec1d055496a92d88f084ebe8d8, type: 2}
 --- !u!1 &376818921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,6 +2440,7 @@ GameObject:
   - component: {fileID: 598259812}
   - component: {fileID: 598259814}
   - component: {fileID: 598259813}
+  - component: {fileID: 598259815}
   m_Layer: 5
   m_Name: Moneytxt
   m_TagString: Untagged
@@ -2561,6 +2565,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598259811}
   m_CullTransparentMesh: 1
+--- !u!114 &598259815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598259811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512106292c14850438369ace833aa346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyText: {fileID: 598259813}
 --- !u!1001 &606550690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3201,6 +3218,7 @@ GameObject:
   - component: {fileID: 844265122}
   - component: {fileID: 844265124}
   - component: {fileID: 844265123}
+  - component: {fileID: 844265125}
   m_Layer: 5
   m_Name: Livestxt
   m_TagString: Untagged
@@ -3325,6 +3343,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844265121}
   m_CullTransparentMesh: 1
+--- !u!114 &844265125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844265121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311dee88fba12b7439328dad4bdc6d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  livesText: {fileID: 844265123}
 --- !u!1001 &844485769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4755,7 +4786,7 @@ GameObject:
   - component: {fileID: 1244893272}
   - component: {fileID: 1244893271}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Starttxt/Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5213,9 +5244,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1310305618}
+  - component: {fileID: 1310305622}
   - component: {fileID: 1310305617}
   - component: {fileID: 1310305619}
   - component: {fileID: 1310305620}
+  - component: {fileID: 1310305621}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5237,8 +5270,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1331591240017884470}
   enemyPrefab: {fileID: 5856477466674583153, guid: a98092fb42ee94d769bb0e0268028a7b, type: 3}
-  timeBetweenWaves: 5
+  timeBetweenWaves: 20.5
   spawnInterval: 0.3
+  waveCountdownText: {fileID: 1244893271}
 --- !u!4 &1310305618
 Transform:
   m_ObjectHideFlags: 0
@@ -5266,9 +5300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1af93531115eb344b0da24d06a8d18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArrowTower: {fileID: 11400000, guid: 46749f4a17c2d486ea13e58d184026e9, type: 2}
-  BombTower: {fileID: 11400000, guid: c620d0b9cf25b48c882a88204555f413, type: 2}
-  MageTower: {fileID: 11400000, guid: a30bb2ec1d055496a92d88f084ebe8d8, type: 2}
 --- !u!114 &1310305620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5285,6 +5316,32 @@ MonoBehaviour:
   _towerName: {fileID: 590901832}
   _towerCost: {fileID: 1241753847}
   _towerDescription: {fileID: 184336624}
+--- !u!114 &1310305621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310305616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec0438496a9699439129d8467906519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 1000
+  startLives: 1
+--- !u!114 &1310305622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310305616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a8d1b2555cd3e4c929b29d3cdb1225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1343850010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5608,7 +5665,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3040432249203614660, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_Name
-      value: ShopTower (1)
+      value: ShopTower(MAGE)
       objectReference: {fileID: 0}
     - target: {fileID: 3040432249203614662, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -5620,7 +5677,7 @@ PrefabInstance:
       objectReference: {fileID: 354449331}
     - target: {fileID: 3040432249203614662, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseMageTurret
+      value: SelectMageTurret
       objectReference: {fileID: 0}
     - target: {fileID: 3040432249203614662, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -7052,7 +7109,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3040432249203614660, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_Name
-      value: ShopTower (2)
+      value: ShopTower(BOMB)
       objectReference: {fileID: 0}
     - target: {fileID: 3040432249203614662, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -7064,7 +7121,7 @@ PrefabInstance:
       objectReference: {fileID: 354449331}
     - target: {fileID: 3040432249203614662, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseBombTurret
+      value: SelectBombTurret
       objectReference: {fileID: 0}
     - target: {fileID: 3040432249203614662, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -8396,7 +8453,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3040432249203614660, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_Name
-      value: ShopTower
+      value: ShopTower(ARCHER)
       objectReference: {fileID: 0}
     - target: {fileID: 3040432249203614662, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8404,7 +8461,7 @@ PrefabInstance:
       objectReference: {fileID: 354449331}
     - target: {fileID: 3040432249203614662, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseArcherTurret
+      value: SelectArcherTurret
       objectReference: {fileID: 0}
     - target: {fileID: 3040432249203614663, guid: d7060449daf46e54eb1a5c57f3e253f2, type: 3}
       propertyPath: m_Pivot.x

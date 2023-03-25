@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
-
-    private GameObject turret;
+    [Header("Optional")]
+    public GameObject turret;
 
     BuildManager buildManager;
 
@@ -15,7 +16,7 @@ public class Node : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (buildManager.GetTurretToBuild() == null) 
+        if (!buildManager.CanBuild) 
         {
             return;
         }
@@ -26,10 +27,7 @@ public class Node : MonoBehaviour
             return;
         }
 
-        //Build turret
-        GameObject turretToBuild = buildManager.GetTurretToBuild();
-        turret = (GameObject) Instantiate(turretToBuild, transform.position, transform.rotation);
-
+        buildManager.BuildTurretOn(this);
     }
 
 
@@ -38,7 +36,12 @@ public class Node : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        if (buildManager.GetTurretToBuild() == null)
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
+        if (!buildManager.CanBuild)
         {
             return;
         }

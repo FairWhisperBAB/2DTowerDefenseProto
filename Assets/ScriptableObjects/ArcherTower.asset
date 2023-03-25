@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Archer
   _cost: 100
   _description: Fast firing tower that does moderate damage to infantry units.
-  _damage: 0
+  _damage: 50
   _range: 15
   _fireRate: 1

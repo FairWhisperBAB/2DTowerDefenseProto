@@ -13,7 +13,7 @@ public class Towers : ScriptableObject
     [TextArea] [SerializeField] private string _description;
 
     [Header("STATS")]
-    [SerializeField] private float _damage;
+    [SerializeField] private int _damage;
     [SerializeField] private int _range;
     [SerializeField] private float _fireRate;
     //Add stats here
@@ -22,7 +22,7 @@ public class Towers : ScriptableObject
     public int Cost => _cost;
     public string Description => _description;
 
-    public float Damage => _damage;
+    public int Damage => _damage;
     public int Range => _range;
     public float FireRate => _fireRate;
 

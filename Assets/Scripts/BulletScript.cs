@@ -9,6 +9,11 @@ public class BulletScript : MonoBehaviour
 
     public float speed = 70f;
 
+    public float explosionRadius = 0f;
+
+    [Header("Scriptable Objects")]
+    public Towers TowerType;
+
     public void Seek(Transform _target)
     {
         target = _target;
@@ -38,8 +43,45 @@ public class BulletScript : MonoBehaviour
 
     void HitTarget()
     {
+        if (explosionRadius > 0f)
+        {
+            Explode();
+        }
+        else
+        {
+            Damage(target);
+        }
+
         Destroy(gameObject);
-        Destroy(target.gameObject);
-        return;
+    }
+
+    void Explode()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.tag == "Enemy")
+            {
+                Damage(collider.transform);
+            }
+        }
+    }
+
+    void Damage(Transform enemy)
+    {
+        Enemy e = enemy.GetComponent<Enemy>();
+
+        if (e != null) 
+        {
+            e.TakeDamage(TowerType.Damage);
+        }
+
+        e.TakeDamage(TowerType.Damage);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }

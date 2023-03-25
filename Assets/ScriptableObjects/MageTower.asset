@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Mage
   _cost: 200
   _description: Slow firing wizard that does high damage to all unity.
-  _damage: 0
+  _damage: 25
   _range: 15
   _fireRate: 0.5

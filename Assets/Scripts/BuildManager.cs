@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BuildManager : MonoBehaviour
@@ -16,21 +17,29 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    [Header("TOWER TYPES")]
-    public Towers ArrowTower;
-    public Towers BombTower;
-    public Towers MageTower;
 
     [Header("other")]
-    private GameObject turretToBuild;
+    private Towers turretToBuild;
 
-    public GameObject GetTurretToBuild() 
-    { 
-        return turretToBuild;
-    }
+    public bool CanBuild { get { return turretToBuild != null; } }
 
-    public void SetTurretToBuild(Towers towerType)
+    public void BuildTurretOn(Node node)
     {
-        turretToBuild = towerType.turretPrefab;
+        if (GameStats.Money < turretToBuild.Cost) 
+        {
+            Debug.Log("Not enough money to build " + turretToBuild);
+            return;
+        }
+
+        GameStats.Money -= turretToBuild.Cost;
+
+        GameObject turret = Instantiate(turretToBuild.turretPrefab, node.transform.position, Quaternion.identity);
+        node.turret = turret;
+
+        Debug.Log("turret built! Money remaining: " + GameStats.Money);
+    }
+    public void SelectTurretToBuild(Towers towerType)
+    {
+        turretToBuild = towerType;
     }
 }

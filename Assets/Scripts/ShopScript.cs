@@ -6,28 +6,33 @@ public class ShopScript : MonoBehaviour
 {
     BuildManager buildManager;
 
+    [Header("TOWER TYPES")]
+    public Towers ArrowTower;
+    public Towers BombTower;
+    public Towers MageTower;
+
     private void Start()
     {
         buildManager = BuildManager.instance;
     }
 
-    public void PurchaseArcherTurret()
+    public void SelectArcherTurret()
     {
         Debug.Log("purchased Archer turret");
-        buildManager.SetTurretToBuild(buildManager.ArrowTower);
+        buildManager.SelectTurretToBuild(ArrowTower);
 
     }
-    public void PurchaseBombTurret()
+    public void SelectBombTurret()
     {
         Debug.Log("purchased Bomb turret");
-        buildManager.SetTurretToBuild(buildManager.BombTower);
+        buildManager.SelectTurretToBuild(BombTower);
 
     }
 
-    public void PurchaseMageTurret()
+    public void SelectMageTurret()
     {
         Debug.Log("purchased Mage turret");
-        buildManager.SetTurretToBuild(buildManager.MageTower);
+        buildManager.SelectTurretToBuild(MageTower);
 
     }
 
