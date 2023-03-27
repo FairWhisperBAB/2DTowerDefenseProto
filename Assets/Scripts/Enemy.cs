@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-    public float speed = 10f;
+    [Header("Enemy Scriptable Object")]
+    public EnemySO enemyType;
 
     private Transform target;
     private int wavePointIndex = 0;
 
-    //ADD INTO SCIRPTABLE OBJECT WHEN MADE
-    public int health = 100;
-    public int moneyGain = 50;
+    public int health;
+
 
     private void Start()
     {
+        health = enemyType.Health;
+
         target = WaypointScript.points[0];
     }
 
@@ -31,14 +32,14 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        GameStats.Money += moneyGain;
+        GameStats.Money += enemyType.MoneyGained;
         Destroy(gameObject);
     }
 
     private void Update()
     {
         Vector3 direction = target.position - transform.position;
-        transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+        transform.Translate(direction.normalized * enemyType.Speed * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
@@ -62,7 +63,6 @@ public class Enemy : MonoBehaviour
     {
         GameStats.Lives--;
         Destroy(gameObject);
-        
     }
 
 }

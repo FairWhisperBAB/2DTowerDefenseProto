@@ -75,8 +75,6 @@ public class BulletScript : MonoBehaviour
         {
             e.TakeDamage(TowerType.Damage);
         }
-
-        e.TakeDamage(TowerType.Damage);
     }
 
     private void OnDrawGizmos()

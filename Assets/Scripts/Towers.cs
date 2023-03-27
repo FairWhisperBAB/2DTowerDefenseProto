@@ -16,6 +16,7 @@ public class Towers : ScriptableObject
     [SerializeField] private int _damage;
     [SerializeField] private int _range;
     [SerializeField] private float _fireRate;
+    [SerializeField] private int _slowing;
     //Add stats here
 
     public string Name => _name;
@@ -25,5 +26,6 @@ public class Towers : ScriptableObject
     public int Damage => _damage;
     public int Range => _range;
     public float FireRate => _fireRate;
+    public int Slowing => _slowing;
 
 }
