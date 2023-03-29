@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    public BulletSO bulletType;
 
     private Transform target;
-
-    public float speed = 70f;
-
-    public float explosionRadius = 0f;
 
     [Header("Scriptable Objects")]
     public Towers TowerType;
@@ -29,7 +26,7 @@ public class BulletScript : MonoBehaviour
         }
 
         Vector3 dir = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;
+        float distanceThisFrame = bulletType.Speed * Time.deltaTime;
 
         if (dir.magnitude <= distanceThisFrame)
         {
@@ -43,7 +40,7 @@ public class BulletScript : MonoBehaviour
 
     void HitTarget()
     {
-        if (explosionRadius > 0f)
+        if (bulletType.AOE > 0f)
         {
             Explode();
         }
@@ -57,7 +54,7 @@ public class BulletScript : MonoBehaviour
 
     void Explode()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, bulletType.AOE);
         foreach (Collider collider in colliders)
         {
             if (collider.tag == "Enemy")
@@ -80,6 +77,6 @@ public class BulletScript : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+        Gizmos.DrawWireSphere(transform.position, bulletType.AOE);
     }
 }

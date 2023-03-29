@@ -96,6 +96,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164e91e7802af40dd81ec550bb6af668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
-  explosionRadius: 0
+  bulletType: {fileID: 11400000, guid: 62f1791ad7821de4ea21d621b5c99a53, type: 2}
   TowerType: {fileID: 11400000, guid: 46749f4a17c2d486ea13e58d184026e9, type: 2}

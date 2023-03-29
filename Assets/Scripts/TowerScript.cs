@@ -5,12 +5,12 @@ using UnityEngine;
 public class TowerScript : MonoBehaviour
 {
     private Transform target;
+
     public Towers towerStats;
+    public BulletSO bulletType;
 
     [Header ("Stats")]
-    //public float fireRate = 1f;
     private float fireCountDown = 0f;
-    //public float range = 15f;
 
     [Header("Unity SetUp")]
     public string enemyTag = "Enemy";
@@ -18,7 +18,6 @@ public class TowerScript : MonoBehaviour
     public Transform partToRotate;
     public float TurnSpeed = 10f;
 
-    public GameObject bulletPrefab;
     public Transform firePoint;
 
 
@@ -81,7 +80,7 @@ public class TowerScript : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject) Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bulletGO = (GameObject) Instantiate(bulletType.bulletPrefab, firePoint.position, firePoint.rotation);
 
         BulletScript bullet = bulletGO.GetComponent<BulletScript>();
 

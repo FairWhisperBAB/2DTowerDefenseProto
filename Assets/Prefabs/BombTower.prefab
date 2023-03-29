@@ -47,10 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerStats: {fileID: 11400000, guid: c620d0b9cf25b48c882a88204555f413, type: 2}
+  bulletType: {fileID: 11400000, guid: a90b453a5aa9992428a7e6d9a5c987da, type: 2}
   enemyTag: Enemy
   partToRotate: {fileID: 2556032693680148622}
   TurnSpeed: 10
-  bulletPrefab: {fileID: 3625939711500217908, guid: a5d215af4ca474f62b7af404257489ea, type: 3}
   firePoint: {fileID: 7686498759148781074}
 --- !u!1 &1259919307462403206
 GameObject:

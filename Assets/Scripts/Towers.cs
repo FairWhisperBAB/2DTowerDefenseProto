@@ -17,12 +17,14 @@ public class Towers : ScriptableObject
     [SerializeField] private int _range;
     [SerializeField] private float _fireRate;
     [SerializeField] private int _slowing;
-    //Add stats here
 
+
+    //info
     public string Name => _name;
     public int Cost => _cost;
     public string Description => _description;
 
+    //stats
     public int Damage => _damage;
     public int Range => _range;
     public float FireRate => _fireRate;
