@@ -7,9 +7,9 @@ public class ShopScript : MonoBehaviour
     BuildManager buildManager;
 
     [Header("TOWER TYPES")]
-    public Towers ArrowTower;
-    public Towers BombTower;
-    public Towers MageTower;
+    [SerializeField] private TowerSO ArrowTower;
+    [SerializeField] private TowerSO BombTower;
+    [SerializeField] private TowerSO MageTower;
 
     private void Start()
     {

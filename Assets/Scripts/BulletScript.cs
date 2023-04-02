@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public BulletSO bulletType;
+    [SerializeField] private BulletSO bulletType;
 
     private Transform target;
 
     [Header("Scriptable Objects")]
-    public Towers TowerType;
+    [SerializeField] private TowerSO TowerType;
 
     public void Seek(Transform _target)
     {
@@ -71,6 +71,7 @@ public class BulletScript : MonoBehaviour
         if (e != null) 
         {
             e.TakeDamage(TowerType.Damage);
+
         }
     }
 

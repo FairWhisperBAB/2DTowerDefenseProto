@@ -52,6 +52,7 @@ MonoBehaviour:
   partToRotate: {fileID: 813380899130468080}
   TurnSpeed: 10
   firePoint: {fileID: 4799291609594087532}
+  test: []
 --- !u!1 &4129042471431082744
 GameObject:
   m_ObjectHideFlags: 0

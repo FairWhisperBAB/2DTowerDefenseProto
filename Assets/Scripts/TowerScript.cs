@@ -6,8 +6,8 @@ public class TowerScript : MonoBehaviour
 {
     private Transform target;
 
-    public Towers towerStats;
-    public BulletSO bulletType;
+    [SerializeField] private TowerSO towerStats;
+    [SerializeField] private BulletSO bulletType;
 
     [Header ("Stats")]
     private float fireCountDown = 0f;
@@ -15,13 +15,10 @@ public class TowerScript : MonoBehaviour
     [Header("Unity SetUp")]
     public string enemyTag = "Enemy";
 
-    public Transform partToRotate;
+    [SerializeField] private Transform partToRotate;
     public float TurnSpeed = 10f;
 
-    public Transform firePoint;
-
-
-
+    [SerializeField] private Transform firePoint;
 
     // Start is called before the first frame update
     void Start()

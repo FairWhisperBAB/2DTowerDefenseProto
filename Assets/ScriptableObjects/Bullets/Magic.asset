@@ -15,3 +15,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 514807090865589420, guid: 57549dfee84df344aac78caa4b4c3bfc, type: 3}
   _speed: 50
   _aoe: 0
+  _slowing: 0.5

@@ -6,7 +6,7 @@ using TMPro;
 public class MoneyUI : MonoBehaviour
 {
 
-    public TextMeshProUGUI moneyText;
+    [SerializeField] private TextMeshProUGUI moneyText;
 
     // Update is called once per frame
     void Update()

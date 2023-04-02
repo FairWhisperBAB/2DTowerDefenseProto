@@ -4,30 +4,41 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Enemy Scriptable Object")]
-    public EnemySO enemyType;
+    [Header("Scriptable Objects")]
+    [SerializeField] private EnemySO enemyType;
+    [SerializeField] private BulletSO bulletType;
 
-    private Transform target;
-    private int wavePointIndex = 0;
+    [SerializeField] private int health;
 
-    public int health;
+    [HideInInspector]
+    public float startSpeed;
+
+    public float speed;
 
 
     private void Start()
     {
         health = enemyType.Health;
-
-        target = WaypointScript.points[0];
+        speed = enemyType.Speed;
+        startSpeed = speed;
     }
 
     public void TakeDamage(int amount)
     {
         health -= amount;
 
-        if (health <= 0) 
+        if (health <= 0)
         {
             Die();
         }
+        
+        Slow(bulletType.Slowing);
+    }
+
+    public void Slow(float pct)
+    {
+        speed = startSpeed * (1f - pct);
+        StartCoroutine("ResetSlow");
     }
 
     void Die()
@@ -36,33 +47,10 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void Update()
+    IEnumerator ResetSlow()
     {
-        Vector3 direction = target.position - transform.position;
-        transform.Translate(direction.normalized * enemyType.Speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
-        {
-            GetNextWayPoint();
-        }
-    }
-
-    void GetNextWayPoint()
-    {
-        if(wavePointIndex >= WaypointScript.points.Length - 1)
-        {
-            EndPath();
-            return;
-        }
-
-        wavePointIndex++;
-        target = WaypointScript.points[wavePointIndex];
-    }
-
-    void EndPath()
-    {
-        GameStats.Lives--;
-        Destroy(gameObject);
+        yield return new WaitForSeconds(3f);
+        speed = startSpeed;
     }
 
 }

@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour
         HideTowerInformation();
     }
 
-    public void ShowTowerInformation(Towers TowerInformation)
+    public void ShowTowerInformation(TowerSO TowerInformation)
     {
         _infoText.SetActive(true);
 

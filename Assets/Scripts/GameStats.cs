@@ -6,10 +6,10 @@ public class GameStats : MonoBehaviour
 {
 
     public static int Money;
-    public int startMoney = 1000;
+    [SerializeField] private int startMoney = 1000;
 
     public static int Lives;
-    public int startLives = 20;
+    [SerializeField] private int startLives = 20;
 
     void Start()
     {

@@ -19,7 +19,7 @@ public class BuildManager : MonoBehaviour
 
 
     [Header("other")]
-    private Towers turretToBuild;
+    private TowerSO turretToBuild;
 
     public bool CanBuild { get { return turretToBuild != null; } }
 
@@ -38,7 +38,7 @@ public class BuildManager : MonoBehaviour
 
         Debug.Log("turret built! Money remaining: " + GameStats.Money);
     }
-    public void SelectTurretToBuild(Towers towerType)
+    public void SelectTurretToBuild(TowerSO towerType)
     {
         turretToBuild = towerType;
     }

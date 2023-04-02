@@ -6,7 +6,7 @@ using TMPro;
 public class LivesUI : MonoBehaviour
 {
 
-    public TextMeshProUGUI livesText;
+    [SerializeField] private TextMeshProUGUI livesText;
     
     //CAN OPTIMIZE LATER
     // Update is called once per frame

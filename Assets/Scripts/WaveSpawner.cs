@@ -6,15 +6,15 @@ using TMPro;
 public class WaveSpawner : MonoBehaviour
 {
 
-    public Transform spawnPoint;
+    [SerializeField] private Transform spawnPoint;
 
-    public Transform enemyPrefab;
+    [SerializeField] private Transform enemyPrefab;
 
     public float timeBetweenWaves = 5f;
     private float countDown = 5f;
     public float spawnInterval = 0.5f;
 
-    public TextMeshProUGUI waveCountdownText;
+    [SerializeField] private TextMeshProUGUI waveCountdownText;
 
     private int waveIndex = 0;
 

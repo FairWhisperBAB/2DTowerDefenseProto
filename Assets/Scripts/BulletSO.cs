@@ -12,9 +12,13 @@ public class BulletSO : ScriptableObject
     [Header("Stats")]
     [SerializeField] private int _speed;
     [SerializeField] private int _aoe;
+    [SerializeField] private float _slowing;
+
 
     public int Speed => _speed;
 
     public int AOE => _aoe;
+    public float Slowing => _slowing;
+
 
 }
