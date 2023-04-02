@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     public void Slow(float pct)
     {
         speed = startSpeed * (1f - pct);
-        StartCoroutine("ResetSlow");
+        StartCoroutine("ResetSpeed");
     }
 
     void Die()
@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    IEnumerator ResetSlow()
+    IEnumerator ResetSpeed()
     {
         yield return new WaitForSeconds(3f);
         speed = startSpeed;
