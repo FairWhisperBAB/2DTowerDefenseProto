@@ -6,8 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private EnemySO enemyType;
-
     private Transform target;
     private int wavePointIndex = 0;
 

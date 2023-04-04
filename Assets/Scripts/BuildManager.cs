@@ -7,6 +7,8 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
 
+    public NodeUI nodeUI;
+
     private void Awake()
     {
         if (instance != null)
@@ -21,25 +23,39 @@ public class BuildManager : MonoBehaviour
     [Header("other")]
     private TowerSO turretToBuild;
 
+    private Node selectedNode;
+
     public bool CanBuild { get { return turretToBuild != null; } }
 
-    public void BuildTurretOn(Node node)
+    public void SelectNode(Node node)
     {
-        if (GameStats.Money < turretToBuild.Cost) 
+        if (selectedNode == node) 
         {
-            Debug.Log("Not enough money to build " + turretToBuild);
+            DeselectNode();
             return;
         }
 
-        GameStats.Money -= turretToBuild.Cost;
+        selectedNode = node;
+        turretToBuild = null;
 
-        GameObject turret = Instantiate(turretToBuild.turretPrefab, node.transform.position, Quaternion.identity);
-        node.turret = turret;
-
-        Debug.Log("turret built! Money remaining: " + GameStats.Money);
+        nodeUI.SetTarget(node);
     }
+
+    public void DeselectNode()
+    {
+        selectedNode = null;
+        nodeUI.Hide();
+    }
+
     public void SelectTurretToBuild(TowerSO towerType)
     {
         turretToBuild = towerType;
+
+        DeselectNode();
+    }
+
+    public TowerSO GetTurretToBuild()
+    {
+            return turretToBuild;
     }
 }

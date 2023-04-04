@@ -14,7 +14,9 @@ public class WaveSpawner : MonoBehaviour
     private float countDown = 5f;
     public float spawnInterval = 0.5f;
 
-    [SerializeField] private TextMeshProUGUI waveCountdownText;
+    [SerializeField] private TextMeshProUGUI waveCountdownTxt;
+
+    [SerializeField] private TextMeshProUGUI waveCounterTxt;
 
     private int waveIndex = 0;
 
@@ -30,12 +32,15 @@ public class WaveSpawner : MonoBehaviour
 
         countDown = Mathf.Clamp(countDown, 0, Mathf.Infinity);
 
-        waveCountdownText.text = string.Format("{0:00.00}", countDown);
+        waveCountdownTxt.text = string.Format("{0:00.00}", countDown);
+
+        waveCounterTxt.text = "Wave: " + GameStats.waves.ToString();
     }
 
     IEnumerator SpawnWave()
     {
         waveIndex++;
+        GameStats.waves++;
 
         for (int i = 0; i < waveIndex; i++)
         {

@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    [SerializeField] private BulletSO bulletType;
-
     private Transform target;
 
     [Header("Scriptable Objects")]
     [SerializeField] private TowerSO TowerType;
+    [SerializeField] private BulletSO bulletType;
 
     public void Seek(Transform _target)
     {
@@ -30,7 +29,7 @@ public class BulletScript : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame)
         {
-            HitTarget();
+            HitTarget(target);
             return;
         }
 
@@ -38,11 +37,19 @@ public class BulletScript : MonoBehaviour
         transform.LookAt(target);
     }
 
-    void HitTarget()
+    void HitTarget(Transform enemy)
     {
         if (bulletType.AOE > 0f)
         {
             Explode();
+        }
+        else if (bulletType.Slowing > 0f)
+        {
+            if (enemy.TryGetComponent<Enemy>(out var e))
+            {
+                e.Slow(bulletType.Slowing);
+                Damage(target);
+            }
         }
         else
         {
@@ -57,7 +64,7 @@ public class BulletScript : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, bulletType.AOE);
         foreach (Collider collider in colliders)
         {
-            if (collider.tag == "Enemy")
+            if (collider.CompareTag("Enemy"))
             {
                 Damage(collider.transform);
             }
@@ -66,12 +73,9 @@ public class BulletScript : MonoBehaviour
 
     void Damage(Transform enemy)
     {
-        Enemy e = enemy.GetComponent<Enemy>();
-
-        if (e != null) 
+        if (enemy.TryGetComponent<Enemy>(out var e)) 
         {
             e.TakeDamage(TowerType.Damage);
-
         }
     }
 

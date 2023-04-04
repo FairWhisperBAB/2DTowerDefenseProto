@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewTower", menuName = "Towers")]
+[CreateAssetMenu(fileName = "NewTower", menuName = "TowerSO")]
 public class TowerSO : ScriptableObject
 {
     [SerializeField] public GameObject turretPrefab;
@@ -16,6 +16,7 @@ public class TowerSO : ScriptableObject
     [SerializeField] private int _damage;
     [SerializeField] private int _range;
     [SerializeField] private float _fireRate;
+    [SerializeField] private int _upgradeCost;
 
 
     //info
@@ -27,5 +28,6 @@ public class TowerSO : ScriptableObject
     public int Damage => _damage;
     public int Range => _range;
     public float FireRate => _fireRate;
+    public int UpgradeCost => _upgradeCost;
 
 }

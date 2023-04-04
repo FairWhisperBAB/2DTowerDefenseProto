@@ -96,5 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164e91e7802af40dd81ec550bb6af668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletType: {fileID: 11400000, guid: f1f43a6a9534e19449b6e3c4c5b660f9, type: 2}
+  E: {fileID: 7212784303493534699, guid: a98092fb42ee94d769bb0e0268028a7b, type: 3}
   TowerType: {fileID: 11400000, guid: a30bb2ec1d055496a92d88f084ebe8d8, type: 2}
+  bulletType: {fileID: 11400000, guid: f1f43a6a9534e19449b6e3c4c5b660f9, type: 2}

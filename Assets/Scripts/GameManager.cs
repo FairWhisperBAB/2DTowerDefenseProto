@@ -5,12 +5,20 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    private bool gameEnded = false;
+    public static bool gameIsOver;
+
+    [SerializeField] private GameObject gameOverUI;
+
+
+    private void Start()
+    {
+        gameIsOver = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameEnded)
+        if (gameIsOver)
         {
             return;
         }
@@ -23,8 +31,11 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
-        gameEnded = true;
+        gameIsOver = true;
         Debug.Log("GAME OVER");
-        //Add an end screen and a menu thingy to get to the main menu or restart the level//
+        
+        Time.timeScale = 0f;
+
+        gameOverUI.SetActive(true);
     }
 }

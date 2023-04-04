@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [Header("Scriptable Objects")]
     [SerializeField] private EnemySO enemyType;
-    [SerializeField] private BulletSO bulletType;
 
     [SerializeField] private int health;
 
@@ -31,8 +31,6 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
-        
-        Slow(bulletType.Slowing);
     }
 
     public void Slow(float pct)
@@ -41,16 +39,15 @@ public class Enemy : MonoBehaviour
         StartCoroutine("ResetSpeed");
     }
 
-    void Die()
-    {
-        GameStats.Money += enemyType.MoneyGained;
-        Destroy(gameObject);
-    }
-
     IEnumerator ResetSpeed()
     {
         yield return new WaitForSeconds(3f);
         speed = startSpeed;
     }
 
+    void Die()
+    {
+        GameStats.Money += enemyType.MoneyGained;
+        Destroy(gameObject);
+    }
 }

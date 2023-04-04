@@ -128,5 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164e91e7802af40dd81ec550bb6af668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletType: {fileID: 11400000, guid: a90b453a5aa9992428a7e6d9a5c987da, type: 2}
+  E: {fileID: 7212784303493534699, guid: a98092fb42ee94d769bb0e0268028a7b, type: 3}
   TowerType: {fileID: 11400000, guid: c620d0b9cf25b48c882a88204555f413, type: 2}
+  bulletType: {fileID: 11400000, guid: a90b453a5aa9992428a7e6d9a5c987da, type: 2}
