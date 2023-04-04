@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6421711830524247155}
   m_Layer: 0
   m_Name: ArrowTower
-  m_TagString: Untagged
+  m_TagString: Archer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,6 @@ MonoBehaviour:
   partToRotate: {fileID: 813380899130468080}
   TurnSpeed: 10
   firePoint: {fileID: 4799291609594087532}
-  test: []
 --- !u!1 &4129042471431082744
 GameObject:
   m_ObjectHideFlags: 0

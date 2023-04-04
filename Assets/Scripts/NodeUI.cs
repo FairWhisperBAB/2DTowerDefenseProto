@@ -25,6 +25,8 @@ public class NodeUI : MonoBehaviour
 
     public void Upgrade()
     {
+        Debug.Log("is being pushed");
+
         target.UpgradeTurret();
 
         BuildManager.instance.DeselectNode();

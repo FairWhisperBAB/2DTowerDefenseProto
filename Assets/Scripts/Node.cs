@@ -4,6 +4,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.GraphicsBuffer;
 
 public class Node : MonoBehaviour
 {
@@ -12,9 +13,12 @@ public class Node : MonoBehaviour
     [HideInInspector]
     public TowerSO towerType;
     [HideInInspector]
-    public TowerSO upgradedTowerType;
-    [HideInInspector]
     public bool isUpgraded = false;
+
+    [SerializeField] private TowerSO UpgradedArcher;
+    [SerializeField] private TowerSO UpgradedBomb;
+    [SerializeField] private TowerSO UpgradedMage;
+
 
     BuildManager buildManager;
 
@@ -44,17 +48,19 @@ public class Node : MonoBehaviour
         BuildTurret(buildManager.GetTurretToBuild());
     }
 
-    void BuildTurret(TowerSO towerType)
+    void BuildTurret(TowerSO tower)
     {
-        if (GameStats.Money < towerType.Cost)
+        if (GameStats.Money < tower.Cost)
         {
-            Debug.Log("Not enough money to build " + towerType);
+            Debug.Log("Not enough money to build " + tower);
             return;
         }
-        GameStats.Money -= towerType.Cost;
+        GameStats.Money -= tower.Cost;
 
-        GameObject _turret = Instantiate(towerType.turretPrefab, transform.position, Quaternion.identity);
+        GameObject _turret = Instantiate(tower.turretPrefab, transform.position, Quaternion.identity);
         turret = _turret;
+
+        towerType = tower;
 
         Debug.Log("turret built!");
     }
@@ -67,11 +73,23 @@ public class Node : MonoBehaviour
             return;
         }
         GameStats.Money -= towerType.UpgradeCost;
-
         Destroy(turret);
 
-        GameObject _turret = Instantiate(upgradedTowerType.turretPrefab, transform.position, Quaternion.identity);
-        turret = _turret;
+        if (turret.CompareTag("Archer"))
+        {
+            GameObject _turret = Instantiate(UpgradedArcher.turretPrefab, transform.position, Quaternion.identity);
+            turret = _turret;
+        }
+        else if (turret.CompareTag("Bomb"))
+        {
+            GameObject _turret = Instantiate(UpgradedBomb.turretPrefab, transform.position, Quaternion.identity);
+            turret = _turret;
+        }
+        else if (turret.CompareTag("Mage"))
+        {
+            GameObject _turret = Instantiate(UpgradedMage.turretPrefab, transform.position, Quaternion.identity);
+            turret = _turret;
+        }
 
         isUpgraded = true;
 
