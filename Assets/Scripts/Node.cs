@@ -19,6 +19,7 @@ public class Node : MonoBehaviour
     [SerializeField] private TowerSO UpgradedBomb;
     [SerializeField] private TowerSO UpgradedMage;
 
+    [SerializeField] Vector3 positionOffset;
 
     BuildManager buildManager;
 
@@ -29,7 +30,7 @@ public class Node : MonoBehaviour
 
     public Vector3 GetBuildPosition()
     {
-        return transform.position;
+        return transform.position + positionOffset;
     }
 
     private void OnMouseDown()
@@ -57,7 +58,7 @@ public class Node : MonoBehaviour
         }
         GameStats.Money -= tower.Cost;
 
-        GameObject _turret = Instantiate(tower.turretPrefab, transform.position, Quaternion.identity);
+        GameObject _turret = Instantiate(tower.turretPrefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
 
         towerType = tower;
@@ -77,23 +78,31 @@ public class Node : MonoBehaviour
 
         if (turret.CompareTag("Archer"))
         {
-            GameObject _turret = Instantiate(UpgradedArcher.turretPrefab, transform.position, Quaternion.identity);
+            GameObject _turret = Instantiate(UpgradedArcher.turretPrefab, GetBuildPosition(), Quaternion.identity);
             turret = _turret;
         }
         else if (turret.CompareTag("Bomb"))
         {
-            GameObject _turret = Instantiate(UpgradedBomb.turretPrefab, transform.position, Quaternion.identity);
+            GameObject _turret = Instantiate(UpgradedBomb.turretPrefab, GetBuildPosition(), Quaternion.identity);
             turret = _turret;
         }
         else if (turret.CompareTag("Mage"))
         {
-            GameObject _turret = Instantiate(UpgradedMage.turretPrefab, transform.position, Quaternion.identity);
+            GameObject _turret = Instantiate(UpgradedMage.turretPrefab, GetBuildPosition(), Quaternion.identity);
             turret = _turret;
         }
 
         isUpgraded = true;
 
         Debug.Log("turret Upgraded!");
+    }
+
+    public void SellTurret()
+    {
+        GameStats.Money += towerType.GetSellAmount();
+
+        Destroy(turret);
+        towerType = null;
     }
 
     //TAKE OUT WHEN PORTING TO MOBILE

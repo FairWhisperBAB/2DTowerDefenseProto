@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8148ce32f5a57498487e94ffa42f9f39, type: 3}
   m_Name: ArcherTower
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 3387948429530781507, guid: 5ae924d61496e43ee902710b6934ed55, type: 3}
-  upgradedTurretPrefab: {fileID: 0}
+  turretPrefab: {fileID: 2560705761734933485, guid: 0e41871c1133041ac81f89dff3b46f5a, type: 3}
   _name: Archer
   _cost: 100
   _description: Fast firing tower that does moderate damage to infantry units.

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewTower", menuName = "TowerSO")]
 public class TowerSO : ScriptableObject
 {
-    [SerializeField] public GameObject turretPrefab;
+    public GameObject turretPrefab;
 
     [Header("INFO")]
     [SerializeField] private string _name;
@@ -18,7 +18,6 @@ public class TowerSO : ScriptableObject
     [SerializeField] private float _fireRate;
     [SerializeField] private int _upgradeCost;
 
-
     //info
     public string Name => _name;
     public int Cost => _cost;
@@ -29,5 +28,10 @@ public class TowerSO : ScriptableObject
     public int Range => _range;
     public float FireRate => _fireRate;
     public int UpgradeCost => _upgradeCost;
+
+    public int GetSellAmount()
+    {
+        return Cost/2;
+    }
 
 }

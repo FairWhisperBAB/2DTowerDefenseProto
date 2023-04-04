@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8148ce32f5a57498487e94ffa42f9f39, type: 3}
   m_Name: UpgradedArcherTower
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 8121467021082565646, guid: 1e86df0fc6f9fe340a3f39e1bba0a629, type: 3}
+  turretPrefab: {fileID: 1936930452357636987, guid: 71d0f127cd2ef486ebac7fc4e53a3d04, type: 3}
   _name: Archer2
   _cost: 200
   _description: upgraded archer that deos more damager and shoots faster

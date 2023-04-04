@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8148ce32f5a57498487e94ffa42f9f39, type: 3}
   m_Name: UpgradedBombTower
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 4264137331997236821, guid: dcdf91eda7f7a407fa8eb1515facd621, type: 3}
+  turretPrefab: {fileID: 2277579238103016848, guid: 3fe0e220884474f6cb54ce390dcf4184, type: 3}
   _name: Bomb2
   _cost: 600
   _description: upgraded bomb tower
