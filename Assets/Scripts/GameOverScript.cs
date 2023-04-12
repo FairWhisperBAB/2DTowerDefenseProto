@@ -7,10 +7,13 @@ using UnityEngine.SceneManagement;
 public class GameOverScript : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI waveCounterTxt;
+    [SerializeField] private GameObject PauseBtn;
 
     private void OnEnable()
     {
-        waveCounterTxt.text = GameStats.waves.ToString();   
+        waveCounterTxt.text = GameStats.waves.ToString();
+        
+        PauseBtn.SetActive(false);
     }
 
     public void Retry()

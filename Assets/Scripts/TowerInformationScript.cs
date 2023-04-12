@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UIController : MonoBehaviour
+public class TowerInformationScript : MonoBehaviour
 {
     [SerializeField] private GameObject _infoText;
     [SerializeField] private TMP_Text _towerName;
