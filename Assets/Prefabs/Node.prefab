@@ -110,4 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec7a945afba703418a19ea70f3eb44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turret: {fileID: 0}
+  towerType: {fileID: 0}
+  isUpgraded: 0
+  UpgradedArcher: {fileID: 11400000, guid: 098c4489a4c31044a9cbe629e465d750, type: 2}
+  UpgradedBomb: {fileID: 11400000, guid: 7dbc06563fb9d448c955eb59ce068fd4, type: 2}
+  UpgradedMage: {fileID: 11400000, guid: 69f8da80ce0f2dc4eb45dc894ce5bed7, type: 2}
+  positionOffset: {x: 0, y: 0.5, z: 0}
   hovercolor: {r: 0.18640977, g: 0.3637557, b: 0.5566038, a: 1}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8148ce32f5a57498487e94ffa42f9f39, type: 3}
+  m_Name: UpgradedMageTower
+  m_EditorClassIdentifier: 
+  turretPrefab: {fileID: 2018316609082756937, guid: 62ab433a59e24d34ebe2f1eb41c18bb6, type: 3}
+  _name: Mage2
+  _cost: 400
+  _description: Upgraded Mage Tower
+  _damage: 100
+  _range: 25
+  _fireRate: 0.5
+  _upgradeCost: 800
