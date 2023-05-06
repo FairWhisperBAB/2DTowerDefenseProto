@@ -6,12 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TowerAIProto.unity
-    guid: 796ba02022bc240218e5281663f59f56
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 4d0145afb89c5f74c849778d473a9ddb
-  - enabled: 1
     path: Assets/Scenes/LevelSelect.unity
     guid: 3b92374483e219547800439e0f3b89e6
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 796ba02022bc240218e5281663f59f56
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: cedf61c1051b26c4abb17a3bdb4d3224
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: ce4b671d7a2b9674995d96b3c532d918
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: c7f76c13fe73b3c4bb26399169a4d345
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: 38640a9b391b3674397e31617446ac01
+  - enabled: 1
+    path: Assets/Scenes/Level 6.unity
+    guid: 86367083e9e006944abb08652b22087d
+  - enabled: 1
+    path: Assets/Scenes/Level 7.unity
+    guid: 3ae060942e3b4524baeb7af0182deb85
+  - enabled: 1
+    path: Assets/Scenes/Level 8.unity
+    guid: 93aaf11db847c5342946efd4dd1864fb
   m_configObjects: {}

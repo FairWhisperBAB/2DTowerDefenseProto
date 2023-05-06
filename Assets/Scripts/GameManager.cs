@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     public static bool gameIsOver;
-
     [SerializeField] private GameObject gameOverUI;
 
+    public static bool gameIsWon;
+    [SerializeField] private GameObject winUI;
+    [SerializeField] private WinConditionSO WinCondition;
 
     private void Start()
     {
         gameIsOver = false;
+        gameIsWon = false;
     }
 
     // Update is called once per frame
@@ -22,14 +24,23 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-
         if (GameStats.Lives <= 0)
         {
-            EndGame();
+            GameOver();
+        }
+
+        if (gameIsWon)
+        {
+            return;
+        }
+        if (GameStats.waves == WinCondition.WavesToWin)
+        {
+            GameisWon();
+            
         }
     }
 
-    void EndGame()
+    void GameOver()
     {
         gameIsOver = true;
         Debug.Log("GAME OVER");
@@ -37,5 +48,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
 
         gameOverUI.SetActive(true);
+    }
+
+    void GameisWon()
+    {
+        gameIsWon = true;
+        Time.timeScale = 0f;
+
+        winUI.SetActive(true);
     }
 }
