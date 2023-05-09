@@ -25868,6 +25868,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7430367137624229601, guid: 0eac586c4a6516242a5d03ea38350d40, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7430367138117657686, guid: 0eac586c4a6516242a5d03ea38350d40, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -33811,6 +33815,14 @@ PrefabInstance:
       propertyPath: WinCondition
       value: 
       objectReference: {fileID: 11400000, guid: 6b6f7c52acd1b944f9f6d6a9a996c47f, type: 2}
+    - target: {fileID: 3532375604793836034, guid: 8ca89734949d1b740960217bf1806604, type: 3}
+      propertyPath: startLives
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532375604793836034, guid: 8ca89734949d1b740960217bf1806604, type: 3}
+      propertyPath: startMoney
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3532375604793836035, guid: 8ca89734949d1b740960217bf1806604, type: 3}
       propertyPath: _infoText
       value: 

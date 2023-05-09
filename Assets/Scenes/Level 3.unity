@@ -5988,6 +5988,14 @@ PrefabInstance:
       propertyPath: WinCondition
       value: 
       objectReference: {fileID: 11400000, guid: c37f4e5a9f09b2e448902ed9a5d9dfb9, type: 2}
+    - target: {fileID: 3532375604793836034, guid: 8ca89734949d1b740960217bf1806604, type: 3}
+      propertyPath: startLives
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532375604793836034, guid: 8ca89734949d1b740960217bf1806604, type: 3}
+      propertyPath: startMoney
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3532375604793836035, guid: 8ca89734949d1b740960217bf1806604, type: 3}
       propertyPath: _infoText
       value: 
@@ -35130,6 +35138,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7430367137605548718, guid: 0eac586c4a6516242a5d03ea38350d40, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430367137624229601, guid: 0eac586c4a6516242a5d03ea38350d40, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7430367138117657686, guid: 0eac586c4a6516242a5d03ea38350d40, type: 3}

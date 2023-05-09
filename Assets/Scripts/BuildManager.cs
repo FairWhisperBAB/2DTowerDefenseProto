@@ -17,6 +17,8 @@ public class BuildManager : MonoBehaviour
             return;
         }
         instance = this;
+
+        Time.timeScale = 1.0f;
     }
 
 
